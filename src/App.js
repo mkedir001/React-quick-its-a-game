@@ -24,12 +24,7 @@ class App extends Component {
     clicked: []
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
+ 
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
       this.handleIncrement();
@@ -71,17 +66,21 @@ class App extends Component {
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return <Wrapper>
-      <Nav title=" Friend Clicky Game" score={this.state.currentScore} topScore={this.state.topScore} rightWrong={this.state.rightWrong} />
-      <Title>React Game</Title>
+      <Nav score={this.state.currentScore} topScore={this.state.topScore} rightWrong={this.state.rightWrong} />
+      <Title>Lets Play</Title>
       {this.state.friends.map(friend => (
         <FriendCard
-          // key={friend.id}
+         
           handleClick={this.handleClick}
           handleIncrement={this.handleIncrement}
           handleReset={this.handleReset}
           handleShuffle={this.handleShuffle}
           id={friend.id}
+          key={friend.id}
+          name={friend.name}
           image={friend.image}
+          occupation={friend.occupation}
+          location={friend.location}
         />
       ))}
     </Wrapper>;
