@@ -16,7 +16,11 @@ function shuffleFriends(array) {
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+    friends,
+    currentScore: 0,
+    topScore: 0,
+    rightWrong: "",
+    clicked: []
   };
 
   removeFriend = id => {
