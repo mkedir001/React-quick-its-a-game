@@ -1,0 +1,32 @@
+nav {
+  width: 100%;
+  font-size: 2rem;
+  color: rgb(15, 4, 4);
+  margin-bottom: 50px;
+  background-color:whiite;
+  height: auto;
+  
+}
+
+a {
+  color: #0c0a92;
+}
+
+
+nav li {
+  display: inline-block;
+  padding: 26px 0;
+  width: 25%;
+  /* text-align: center; */
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+  #cur-sco, #top-sco {
+    font-size: 2rem;
+  }
+}
